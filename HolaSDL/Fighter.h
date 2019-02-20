@@ -24,7 +24,7 @@ private:
 	NaturalMovePC naturalMove_;
 	ShowUpAtOppositeSidePC oppositeSide_;
 	RotationIC rotation__;
-	ThrustIC thrust_;
+	//ThrustIC thrust_;
 	/*
 	ReduceSpeedPC reduceSpeed_;
 	GunIC normalGun_;*/
