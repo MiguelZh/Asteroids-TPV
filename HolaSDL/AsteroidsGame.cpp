@@ -15,7 +15,7 @@ AsteroidsGame::~AsteroidsGame() {
 }
 
 void AsteroidsGame::initGame() {
-	GameObject * fighter = new Fighter(this, 200, 200, 75, 75);
+	GameObject * fighter = new Fighter(this, 200, 200, 75, 75,5);
 	actors_.push_back(&demoContainer_);
 	actors_.push_back(fighter);
 }

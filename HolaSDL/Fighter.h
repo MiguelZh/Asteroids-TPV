@@ -8,10 +8,12 @@
 #include "ImageGC.h"
 #include "NaturalMovePC.h"
 #include "BounceOnBorderPC.h"
+#include "ShowUpAtOppositeSidePC.h"
+#include "RotationIC.h"
 
 class Fighter : public Container {
 public:
-	Fighter(SDLGame* game,int x, int y , int width, int height);
+	Fighter(SDLGame* game,int x, int y , int width, int height, int angle);
 	virtual ~Fighter();
 	virtual void handleInput(Uint32 time, const SDL_Event& event);
 	virtual void update(Uint32 time);
@@ -19,8 +21,9 @@ public:
 private:
 	ImageGC fighterImage_;	
 	NaturalMovePC naturalMove_;
-	/*ShowUpAtOppositeSidePC oppositeSide_;
-	RotationIC rotation_;
+	ShowUpAtOppositeSidePC oppositeSide_;
+	RotationIC rotation__;
+	/*
 	ThrustIC thrust_;
 	ReduceSpeedPC reduceSpeed_;
 	GunIC normalGun_;*/

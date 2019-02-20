@@ -2,6 +2,7 @@
 
 #include "Component.h"
 #include "Container.h"
+#include "GameObject.h"
 #include "sdl_includes.h"
 
 /*

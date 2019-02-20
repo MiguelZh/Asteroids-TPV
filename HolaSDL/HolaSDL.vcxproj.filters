@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de código fuente\Physics">
+      <UniqueIdentifier>{407fb10b-b0b8-4f1c-8fd2-37ab8b2d9422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Physics">
+      <UniqueIdentifier>{13402814-958e-49b6-b14e-88459a1e077f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoundingBoxGC.h">
@@ -66,13 +72,7 @@
     <ClInclude Include="InputComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="NaturalMovePC.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Observer.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="RandomNumberGenerator.h">
@@ -121,6 +121,18 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Fighter.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="NaturalMovePC.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowUpAtOppositeSidePC.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationIC.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -182,13 +194,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="NaturalMovePC.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="Observer.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsComponent.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="RandomNumberGenerator.cpp">
@@ -225,6 +231,18 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="Fighter.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="NaturalMovePC.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowUpAtOppositeSidePC.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationIC.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
