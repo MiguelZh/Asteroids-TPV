@@ -147,6 +147,12 @@
     <ClInclude Include="ReduceSpeedPC.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="GunIC.h">
+      <Filter>Archivos de encabezado\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroids.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -262,6 +268,12 @@
     </ClCompile>
     <ClCompile Include="ReduceSpeedPC.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="GunIC.cpp">
+      <Filter>Archivos de código fuente\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroids.cpp">
+      <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 // you can replace these lines by corresponding
 // includes once the classes are defined
 
-class Asteroid;
+class Asteroids;
 class Bullet;
 
 namespace msg {
@@ -33,21 +33,21 @@ struct Shoot: public msg::Message {
 };
 
 struct BulletAsteroidCollision: public msg::Message {
-	BulletAsteroidCollision(msg::ObjectId sender, msg::ObjectId destination, Bullet* bullet, Asteroid* asteroid) :
+	BulletAsteroidCollision(msg::ObjectId sender, msg::ObjectId destination, Bullet* bullet, Asteroids* asteroid) :
 	Message(msg::BULLET_ASTEROID_COLLISION, sender, destination), bullet_(bullet), asteroid_(asteroid)  {
 	}
 
 	Bullet* bullet_;
-	Asteroid* asteroid_;
+	Asteroids* asteroid_;
 };
 
 struct FighterAsteroidCollisionMsg: public msg::Message {
-	FighterAsteroidCollisionMsg(msg::ObjectId sender, msg::ObjectId destination, GameObject* fighter, Asteroid* asteroid) :
+	FighterAsteroidCollisionMsg(msg::ObjectId sender, msg::ObjectId destination, GameObject* fighter, Asteroids* asteroid) :
 	Message(msg::FIGHTER_ASTEROID_COLLISION, sender, destination), fighter_(fighter), asteroid_(asteroid)  {
 	}
 
 	GameObject* fighter_;
-	Asteroid* asteroid_;
+	Asteroids* asteroid_;
 };
 
 struct AsteroidDestroyed: public msg::Message {
@@ -74,10 +74,10 @@ struct BulletsInfoMsg: public msg::Message {
 };
 
 struct AsteroidsInfo: public msg::Message {
-	AsteroidsInfo(msg::ObjectId sender, msg::ObjectId destination, const std::vector<Asteroid*>* asteroids) :
+	AsteroidsInfo(msg::ObjectId sender, msg::ObjectId destination, const std::vector<Asteroids*>* asteroids) :
 	Message(msg::ASTEROIDS_INFO, sender, destination), asteroids_(asteroids)  {
 	}
-	const std::vector<Asteroid*>*  asteroids_;
+	const std::vector<Asteroids*>*  asteroids_;
 };
 
 };

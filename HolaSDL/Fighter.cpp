@@ -24,12 +24,9 @@ void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 		rotation__.handleInput(event, this, time);
 		thrust_.handleInput(event, this, time);
 		switch (event.key.keysym.sym) {
-		case SDLK_DOWN:
-			// decrease velocity
-			velocity_ = velocity_ * 0.9;
-			break;
 		case SDLK_SPACE: {
 			// add a bullet
+
 			/*Vector2D bulletPosition = position_
 					+ Vector2D(width_ / 2, height_ / 2)
 					+ Vector2D(0, -1).rotate(rotation_)*(height_/2+10);

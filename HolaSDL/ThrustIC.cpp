@@ -22,6 +22,7 @@ void ThrustIC::handleInput(const SDL_Event & event, Container * c, Uint32 time)
 			c->setVelocity(c->getVelocity() + (Vector2D(0, -1).rotate(c->getRotation())*thrust_));
 		}
 		else {
-			c->setVelocity(c->getVelocity().normalize()*speedLimit_);	}
+			c->setVelocity(c->getVelocity().normalize()*speedLimit_);
+	}
 	}
 }

@@ -12,6 +12,7 @@
 #include "RotationIC.h"
 #include "ThrustIC.h"
 #include"ReduceSpeedPC.h"
+#include"GunIC.h"
 
 class Fighter : public Container {
 public:
