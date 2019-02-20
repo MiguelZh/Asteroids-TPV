@@ -1,15 +1,17 @@
 #include "Fighter.h"
 
-Fighter::Fighter(SDLGame* game, int x, int y, int width, int height, int angle) :
+Fighter::Fighter(SDLGame* game, int x, int y, int width, int height, int angle, double thrust, double speedLimit, double factor) :
 	Container(game),
 	fighterImage_(game->getServiceLocator()->getTextures()->getTexture(Resources::Airplanes), { 47, 90, 207, 250 }),
-	rotation__(SDLK_LEFT,SDLK_RIGHT,angle)
+	rotation__(SDLK_LEFT,SDLK_RIGHT,angle),
+	thrust_(SDLK_UP,thrust,speedLimit),
+	reduceSpeed_(factor)
 {
 	setWidth(width);
 	setHeight(height);
 	setPosition({ (double)x,(double)y });
 	setRotation(angle);
-	setVelocity({ 2, 0 });
+	setVelocity({ 1, 1 });
 	//rotation_ = 90;
 	//bs_ = bs;
 }
@@ -20,13 +22,8 @@ Fighter::~Fighter() {
 void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 	if (event.type == SDL_KEYDOWN) {
 		rotation__.handleInput(event, this, time);
+		thrust_.handleInput(event, this, time);
 		switch (event.key.keysym.sym) {
-		case SDLK_UP:
-			// increase velocity
-			if (velocity_.magnitude() < 3) {
-				velocity_ = velocity_ * 1.1;
-			}
-			break;
 		case SDLK_DOWN:
 			// decrease velocity
 			velocity_ = velocity_ * 0.9;
@@ -49,7 +46,8 @@ void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 
 void Fighter::update(Uint32 time) {
 	naturalMove_.update(this, time); //Movement 
-	oppositeSide_.update(this,time); // Reappearing in side screens
+	oppositeSide_.update(this,time); //Reappearing in side screens
+	reduceSpeed_.update(this, time); //Reduce speed with time
 }
 
 void Fighter::render(Uint32 time) {

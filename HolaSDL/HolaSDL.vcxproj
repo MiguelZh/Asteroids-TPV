@@ -35,6 +35,7 @@
     <ClInclude Include="Observer.h" />
     <ClInclude Include="PhysicsComponent.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
+    <ClInclude Include="ReduceSpeedPC.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="RotationIC.h" />
     <ClInclude Include="SDLAudioManager.h" />
@@ -75,6 +76,7 @@
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
+    <ClCompile Include="ReduceSpeedPC.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="RotationIC.cpp" />
     <ClCompile Include="SDLAudioManager.cpp" />

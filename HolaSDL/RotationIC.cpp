@@ -16,12 +16,12 @@ RotationIC::~RotationIC()
 
 void RotationIC::handleInput(const SDL_Event & event, Container * c, Uint32 time)
 {
-	if (event.key.keysym.sym == left_) // rotate fighter to left
+	if (event.key.keysym.sym == right_) // rotate fighter to left
 	{
 		c->setRotation((int)(c->getRotation() + angle_) % 360);
 		c->setVelocity(c->getVelocity().rotate(angle_));
 	}
-	if (event.key.keysym.sym == right_)// rotate fighter to right
+	if (event.key.keysym.sym == left_)// rotate fighter to right
 	{
 		c->setRotation((int)(c->getRotation() + 360 - angle_) % 360);
 		c->setVelocity(c->getVelocity().rotate(-angle_));

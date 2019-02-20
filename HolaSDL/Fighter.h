@@ -11,10 +11,11 @@
 #include "ShowUpAtOppositeSidePC.h"
 #include "RotationIC.h"
 #include "ThrustIC.h"
+#include"ReduceSpeedPC.h"
 
 class Fighter : public Container {
 public:
-	Fighter(SDLGame* game,int x, int y , int width, int height, int angle);
+	Fighter(SDLGame* game,int x, int y , int width, int height, int angle, double thrust, double speedLimit, double factor);
 	virtual ~Fighter();
 	virtual void handleInput(Uint32 time, const SDL_Event& event);
 	virtual void update(Uint32 time);
@@ -24,10 +25,9 @@ private:
 	NaturalMovePC naturalMove_;
 	ShowUpAtOppositeSidePC oppositeSide_;
 	RotationIC rotation__;
-	//ThrustIC thrust_;
-	/*
+	ThrustIC thrust_;
 	ReduceSpeedPC reduceSpeed_;
-	GunIC normalGun_;*/
+	//GunIC normalGun_;*/
 	//BulletsShooter* bs_;
 };
 
