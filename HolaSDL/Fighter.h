@@ -10,6 +10,7 @@
 #include "BounceOnBorderPC.h"
 #include "ShowUpAtOppositeSidePC.h"
 #include "RotationIC.h"
+#include "ThrustIC.h"
 
 class Fighter : public Container {
 public:
@@ -23,8 +24,8 @@ private:
 	NaturalMovePC naturalMove_;
 	ShowUpAtOppositeSidePC oppositeSide_;
 	RotationIC rotation__;
-	/*
 	ThrustIC thrust_;
+	/*
 	ReduceSpeedPC reduceSpeed_;
 	GunIC normalGun_;*/
 	//BulletsShooter* bs_;

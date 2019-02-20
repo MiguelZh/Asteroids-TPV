@@ -31,13 +31,13 @@ void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 			break;
 		case SDLK_RIGHT:
 			// rotate fighter to right
-			//rotation_ = ((int) rotation_ + 5) % 360;
+			//rotation_ = ((int) this->getRotation() + 5) % 360;
 			rotation__.update(this, time, this->getRotation());
 			velocity_ = velocity_.rotate(5);
 			break;
 		case SDLK_LEFT:
 			// rotate fighter to left
-			//rotation_ = ((int) rotation_ + 360 - 5) % 360;
+			//rotation_ = ((int)this->getRotation() + 360 - 5) % 360;
 			rotation__.update(this, time, -this->getRotation());
 			velocity_ = velocity_.rotate(-5);
 			break;
