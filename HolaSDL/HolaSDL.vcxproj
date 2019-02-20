@@ -48,6 +48,7 @@
     <ClInclude Include="StopOnBordersPC.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturesManager.h" />
+    <ClInclude Include="ThrustIC.h" />
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +87,7 @@
     <ClCompile Include="StopOnBordersPC.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturesManager.cpp" />
+    <ClCompile Include="ThrustIC.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
