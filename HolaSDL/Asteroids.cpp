@@ -4,7 +4,7 @@
 
 
 
-Asteroids::Asteroids(SDLGame* game,double x, double y, int width, int height):
+Asteroids::Asteroids(SDLGame* game,Vector2D vel, double x, double y, double width, double height):
 	GameObjectPool(game),
 	rotating_(10)
 {
@@ -13,7 +13,8 @@ Asteroids::Asteroids(SDLGame* game,double x, double y, int width, int height):
 		a->addOC(&(NaturalMovePC) naturalMove_);
 		a->addOC(&(RotatingPC)rotating_);
 		a->addOC(&(ShowUpAtOppositeSidePC) showUpAtOppositeSide_);
-		
+		a->setValue(vel,x, y, width, height);
+		a->setActive(true);
 	}
 }
 

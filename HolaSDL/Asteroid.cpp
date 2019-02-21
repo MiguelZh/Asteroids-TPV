@@ -7,15 +7,11 @@ Asteroid::Asteroid()
 
 }
 
-Asteroid::Asteroid(SDLGame* game, double x, double y, int width, int height):
+Asteroid::Asteroid(SDLGame* game):
 	Container(game),
 	asteroidImage_(game->getServiceLocator()->getTextures()->getTexture(Resources::Asteroid)),
 	rotating_(10)
 {
-	setWidth(width);
-	setHeight(height);
-	setPosition({ (double)x,(double)y });
-	setVelocity({ 1, 1 });
 }
 
 
@@ -36,4 +32,12 @@ void Asteroid::render(Uint32 time)
 	SDL_Rect dest = RECT(getPosition().getX(), getPosition().getY(), getWidth(),
 		getHeight());
 	asteroidImage_.render(this, time);
+}
+
+void Asteroid::setValue(Vector2D vel, double x, double y, double width, double height)
+{
+	setWidth(width);
+	setHeight(height);
+	setPosition({x,y });
+	setVelocity(vel);
 }
