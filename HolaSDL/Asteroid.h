@@ -12,7 +12,7 @@ public:
 	virtual ~Asteroid();
 	void update(Uint32 time);
 	void render(Uint32 time);
-	void setValue(Vector2D vel , double x, double y, double width, double height);
+	void setComponents(Vector2D vel , Vector2D pos, double width, double height, ImageGC asteroidImage_,NaturalMovePC naturalMove, RotatingPC rotating ,ShowUpAtOppositeSidePC showUpAtOppositeSide);
 private:
 	ImageGC asteroidImage_;
 	NaturalMovePC naturalMove_;

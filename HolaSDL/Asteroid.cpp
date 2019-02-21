@@ -34,10 +34,14 @@ void Asteroid::render(Uint32 time)
 	asteroidImage_.render(this, time);
 }
 
-void Asteroid::setValue(Vector2D vel, double x, double y, double width, double height)
+void Asteroid::setComponents(Vector2D vel, Vector2D pos, double width, double height, ImageGC asteroidImage, NaturalMovePC naturalMove, RotatingPC rotating, ShowUpAtOppositeSidePC showUpAtOppositeSide)
 {
 	setWidth(width);
 	setHeight(height);
-	setPosition({x,y });
+	setPosition(pos);
 	setVelocity(vel);
+	asteroidImage_ = asteroidImage;
+	naturalMove_ = naturalMove;
+	rotating_ = rotating;
+	showUpAtOppositeSide_ = showUpAtOppositeSide;
 }
