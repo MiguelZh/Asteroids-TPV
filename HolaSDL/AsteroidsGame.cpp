@@ -6,7 +6,8 @@ using namespace std;
 AsteroidsGame::AsteroidsGame() :
 		SDLGame("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_),
 		demoContainer_(this),
-		fighter(this)
+		fighter_(this),
+		asteroids_(this)
 {
 	initGame();
 }
@@ -16,10 +17,9 @@ AsteroidsGame::~AsteroidsGame() {
 }
 
 void AsteroidsGame::initGame() {
-	//GameObjectPool<Asteroid,50>* asteroides = new Asteroids(this, Vector2D((double)this->getServiceLocator()->getRandomGenerator()->nextInt(1, 5), (double)this->getServiceLocator()->getRandomGenerator()->nextInt(1, 5)), (double)this->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)this->getWindowWidth()), (double)this->getServiceLocator()->getRandomGenerator()->nextInt(0,this->getWindowHeight()), (double)this->getWindowWidth(), (double)this->getWindowHeight());
 	actors_.push_back(&demoContainer_);
-	actors_.push_back(&fighter);
-	//actors_.push_back(asteroides);
+	actors_.push_back(&fighter_);
+	actors_.push_back(&asteroids_);
 }
 
 void AsteroidsGame::closeGame() {

@@ -4,18 +4,13 @@
 
 
 
-Asteroids::Asteroids(SDLGame* game,Vector2D vel, double x, double y, double width, double height):
+Asteroids::Asteroids(SDLGame* game):
 	GameObjectPool(game),
-	rotating_(10)
+	rotating_(8),
+	asteroidImage_(getGame()->getServiceLocator()->getTextures()->getTexture(Resources::Asteroid)),
+	naturalMove_(),
+	showUpAtOppositeSide_()
 {
-	for (Asteroid * a : getAllObjects()) {
-		a->addOC(&(ImageGC) asteroidImage_);
-		a->addOC(&(NaturalMovePC) naturalMove_);
-		a->addOC(&(RotatingPC)rotating_);
-		a->addOC(&(ShowUpAtOppositeSidePC) showUpAtOppositeSide_);
-		a->setValue(vel,x, y, width, height);
-		a->setActive(true);
-	}
 }
 
 

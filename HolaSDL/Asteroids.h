@@ -5,7 +5,7 @@
 class Asteroids : public GameObjectPool<Asteroid, 50>
 {
 public:
-	Asteroids(SDLGame* game,Vector2D vel, double x, double y, double width, double height);
+	Asteroids(SDLGame* game);
 	virtual ~Asteroids();
 	virtual void update(Uint32 time);
 	virtual void render(Uint32 time);

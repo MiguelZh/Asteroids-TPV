@@ -31,7 +31,8 @@ private:
 	const static int _WINDOW_HEIGHT_ = 600;
 	bool exit_;
 	std::vector<GameObject*> actors_;
-	Fighter fighter;
+	Fighter fighter_;
+	Asteroids asteroids_;
 	DemoContainer demoContainer_;
 
 };
