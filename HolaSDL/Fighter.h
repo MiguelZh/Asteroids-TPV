@@ -16,7 +16,7 @@
 
 class Fighter : public Container {
 public:
-	Fighter(SDLGame* game,int x, int y , int width, int height, int angle, double thrust, double speedLimit, double factor);
+	Fighter(SDLGame* game,double x, double y , int width, int height, int angle, double thrust, double speedLimit, double factor);
 	virtual ~Fighter();
 	virtual void handleInput(Uint32 time, const SDL_Event& event);
 	virtual void update(Uint32 time);

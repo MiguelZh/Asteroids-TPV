@@ -1,6 +1,6 @@
 #include "Fighter.h"
 
-Fighter::Fighter(SDLGame* game, int x, int y, int width, int height, int angle, double thrust, double speedLimit, double factor) :
+Fighter::Fighter(SDLGame* game, double x, double y, int width, int height, int angle, double thrust, double speedLimit, double factor) :
 	Container(game),
 	fighterImage_(game->getServiceLocator()->getTextures()->getTexture(Resources::Airplanes), { 47, 90, 207, 250 }),
 	rotation__(SDLK_LEFT,SDLK_RIGHT,angle),

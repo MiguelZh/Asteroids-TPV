@@ -16,8 +16,10 @@ AsteroidsGame::~AsteroidsGame() {
 
 void AsteroidsGame::initGame() {
 	GameObject * fighter = new Fighter(this, 200, 200, 75, 75,5,0.5,4.0,0.995);
+	GameObjectPool<Asteroid,50>* asteroides = new Asteroids(this);
 	actors_.push_back(&demoContainer_);
 	actors_.push_back(fighter);
+	actors_.push_back(asteroides);
 }
 
 void AsteroidsGame::closeGame() {

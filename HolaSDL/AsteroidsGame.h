@@ -5,7 +5,10 @@
 #include "DemoContainer.h"
 #include "SDLGame.h"
 #include "GameObject.h"
+#include "GameObjectPool.h"
 #include "Fighter.h"
+#include "Asteroids.h"
+#include "Asteroid.h"
 
 class AsteroidsGame: public SDLGame {
 

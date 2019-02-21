@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 #include <vector>
 #include "Vector2D.h"
 #include "GameObject.h"
@@ -81,3 +81,4 @@ struct AsteroidsInfo: public msg::Message {
 };
 
 };
+*/

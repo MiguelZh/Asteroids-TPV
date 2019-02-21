@@ -1,13 +1,14 @@
 #pragma once
 #include"GameObjectPool.h"
-#include"ImageGC.h"
-#include"NaturalMovePC.h"
-#include"ShowUpAtOppositeSidePC.h"
-class Asteroids : public GameObjectPool<Asteroids, 50>
+#include"Asteroid.h"
+#include"Vector2D.h"
+class Asteroids : public GameObjectPool<Asteroid, 50>
 {
 public:
-	Asteroids(SDLGame* game);
+	Asteroids(SDLGame* game, double x, double y, int width, int height);
 	virtual ~Asteroids();
+	virtual void update(Uint32 time);
+	virtual void render(Uint32 time);
 private:
 	// component for Asteroid
 	ImageGC asteroidImage_;

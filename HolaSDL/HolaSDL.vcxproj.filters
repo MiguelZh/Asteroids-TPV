@@ -25,6 +25,12 @@
     <Filter Include="Archivos de código fuente\Inputs">
       <UniqueIdentifier>{76359b6b-b3ce-45f7-9bce-b896b94fa39b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de código fuente\GameObjects">
+      <UniqueIdentifier>{ba6c9581-faec-47c7-9a9b-8b9a49f5c568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\GameObjects">
+      <UniqueIdentifier>{f754dc2b-8932-4bf7-a485-f4452688703d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoundingBoxGC.h">
@@ -126,9 +132,6 @@
     <ClInclude Include="Messages_decl.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Fighter.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="NaturalMovePC.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
@@ -150,8 +153,17 @@
     <ClInclude Include="GunIC.h">
       <Filter>Archivos de encabezado\Inputs</Filter>
     </ClInclude>
+    <ClInclude Include="Fighter.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
     <ClInclude Include="Asteroids.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="RotatingPC.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +260,6 @@
     <ClCompile Include="Vector2D.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="NaturalMovePC.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
@@ -273,7 +282,16 @@
       <Filter>Archivos de código fuente\Inputs</Filter>
     </ClCompile>
     <ClCompile Include="Asteroids.cpp">
-      <Filter>Archivos de código fuente</Filter>
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="RotatingPC.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
