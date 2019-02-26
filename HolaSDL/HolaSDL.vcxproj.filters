@@ -156,14 +156,14 @@
     <ClInclude Include="Fighter.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Asteroids.h">
-      <Filter>Archivos de encabezado\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="Asteroid.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="RotatingPC.h">
       <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroids.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

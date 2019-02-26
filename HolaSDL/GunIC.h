@@ -1,6 +1,8 @@
 #pragma once
 #include "Container.h"
-class GunIC
+#include"Messages_defs.h"
+#include"InputComponent.h"
+class GunIC : public InputComponent
 {
 private:
 	SDL_Keycode space_;

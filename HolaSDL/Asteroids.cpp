@@ -1,4 +1,4 @@
-#include "Asteroids.h"
+#include"Asteroids.h"
 
 
 
@@ -6,7 +6,7 @@
 
 Asteroids::Asteroids(SDLGame* game) :
 	GameObjectPool(game),
-	rotating_(8),
+	rotating_((double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, 10)),
 	asteroidImage_(getGame()->getServiceLocator()->getTextures()->getTexture(Resources::Asteroid)),
 	naturalMove_(),
 	showUpAtOppositeSide_()
