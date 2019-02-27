@@ -7,8 +7,8 @@ class Bullet : public Container
 {
 public:
 	Bullet();
+	Bullet(SDLGame * game, NaturalMovePC naturalMove, DeactivateOnBorderExit deactivate, ImageGC bulletImage);
 	virtual ~Bullet();
-	void setComponent(NaturalMovePC naturalMove, DeactivateOnBorderExit deactivate, ImageGC bulletImage);
 private:
 	NaturalMovePC naturalMove_;
 	DeactivateOnBorderExit deactivate_;

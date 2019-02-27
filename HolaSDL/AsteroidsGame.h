@@ -9,6 +9,7 @@
 #include "Fighter.h"
 #include "Asteroids.h"
 #include "Asteroid.h"
+#include"Bullets.h"
 
 class AsteroidsGame: public SDLGame {
 
@@ -33,6 +34,7 @@ private:
 	std::vector<GameObject*> actors_;
 	Fighter fighter_;
 	Asteroids asteroids_;
+	Bullets bullets_;
 	DemoContainer demoContainer_;
 
 };

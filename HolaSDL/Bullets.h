@@ -12,7 +12,6 @@ public:
 	virtual void update(Uint32 time);
 	virtual void render(Uint32 time);
 private:
-	void asignComponent(NaturalMovePC naturalMove, DeactivateOnBorderExit deactivate, ImageGC bulletImage);
 	// components for Bullet
 	NaturalMovePC naturalMove_;
 	DeactivateOnBorderExit deactivate_;

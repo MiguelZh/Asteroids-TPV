@@ -8,9 +8,11 @@ Bullets::Bullets(SDLGame * game):
 	bulletImage_(getGame()->getServiceLocator()->getTextures()->getTexture(Resources::WhiteRect)),
 	deactivate_()
 {
-	setWidth(20);
-	setHeight(20);
-	asignComponent(naturalMove_, deactivate_, bulletImage_);
+	for (Bullet * b : getAllObjects()) {
+		b->addC(&naturalMove_);
+		b->addC(&deactivate_);
+		b->addC(&bulletImage_);
+	}
 }
 
 
@@ -36,9 +38,3 @@ void Bullets::render(Uint32 time)
 	}
 }
 
-void Bullets::asignComponent(NaturalMovePC naturalMove, DeactivateOnBorderExit deactivate, ImageGC bulletImage)
-{
-	for (Bullet *b : getAllObjects()) {
-		b->setComponent(naturalMove, deactivate, bulletImage);
-	}
-}
