@@ -14,7 +14,7 @@ ThrustIC::~ThrustIC()
 {
 }
 
-void ThrustIC::handleInput(const SDL_Event & event, Container * c, Uint32 time)
+void ThrustIC::handleInput(Container * c, Uint32 time, const SDL_Event & event)
 {
 	// increase velocity
 	if (event.key.keysym.sym == up_) {
@@ -23,6 +23,7 @@ void ThrustIC::handleInput(const SDL_Event & event, Container * c, Uint32 time)
 		}
 		else {
 			c->setVelocity(c->getVelocity().normalize()*speedLimit_);
-	}
+		}
 	}
 }
+

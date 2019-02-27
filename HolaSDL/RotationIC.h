@@ -1,6 +1,6 @@
 #pragma once
-#include "Container.h"
-class RotationIC
+#include "InputComponent.h"
+class RotationIC : public InputComponent
 {
 private:
 	SDL_Keycode left_;
@@ -9,6 +9,6 @@ private:
 public:
 	RotationIC(SDL_Keycode left, SDL_Keycode right, int angle);
 	virtual ~RotationIC();
-	virtual void handleInput(const SDL_Event & event, Container *c, Uint32 time);
+	virtual void handleInput(Container* c, Uint32 time, const SDL_Event& event);
 };
 

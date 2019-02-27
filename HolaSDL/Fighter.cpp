@@ -3,7 +3,7 @@
 Fighter::Fighter(SDLGame* game) :
 	Container(game),
 	fighterImage_(game->getServiceLocator()->getTextures()->getTexture(Resources::Airplanes), { 47, 90, 207, 250 }),
-	rotation__(SDLK_LEFT,SDLK_RIGHT,5),
+	rotation_(SDLK_LEFT,SDLK_RIGHT,5),
 	thrust_(SDLK_UP,0.5,4.0),
 	reduceSpeed_(0.995),
 	normalGun_(SDLK_SPACE)
@@ -13,6 +13,13 @@ Fighter::Fighter(SDLGame* game) :
 	setPosition(Vector2D(game->getWindowWidth() / 2, game->getWindowHeight() / 2));
 	setRotation(0.5);
 	setVelocity({ 1, 1 });
+	addC(&fighterImage_);
+	addC(&naturalMove_);
+	addC(&oppositeSide_);
+	addC(&rotation_);
+	addC(&thrust_);
+	addC(&reduceSpeed_);
+	addC(&normalGun_);
 	//rotation_ = 90;
 	//bs_ = bs;
 }
@@ -20,10 +27,10 @@ Fighter::Fighter(SDLGame* game) :
 Fighter::~Fighter() {
 }
 
-void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
+/*void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 	if (event.type == SDL_KEYDOWN) {
-		rotation__.handleInput(event, this, time);
-		thrust_.handleInput(event, this, time);
+		rotation_.handleInput(this, time, event);
+		thrust_.handleInput(this, time, event);
 		normalGun_.handleInput(this, time, event);
 		}
 }
@@ -40,3 +47,4 @@ void Fighter::render(Uint32 time) {
 			getHeight());
 	fighterImage_.render(this, 1);
 }
+*/

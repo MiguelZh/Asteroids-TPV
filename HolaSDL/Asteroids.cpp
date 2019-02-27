@@ -36,8 +36,6 @@ Asteroids::Asteroids(SDLGame* game) :
 		a->setActive(true);
 	}
 }
-
-
 Asteroids::~Asteroids()
 {
 }

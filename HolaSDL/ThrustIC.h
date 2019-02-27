@@ -1,6 +1,6 @@
 #pragma once
-#include "Container.h"
-class ThrustIC
+#include "InputComponent.h"
+class ThrustIC : public InputComponent
 {
 protected:
 	double thrust_; // betweeen 0-1
@@ -9,6 +9,6 @@ protected:
 public:
 	ThrustIC(SDL_Keycode up,double thrust, double speedLimit);
 	virtual ~ThrustIC();
-	virtual void handleInput(const SDL_Event & event, Container * c, Uint32 time);
+	virtual void handleInput(Container* c, Uint32 time, const SDL_Event& event);
 };
 
