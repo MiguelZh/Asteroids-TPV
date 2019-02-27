@@ -5,7 +5,8 @@ Fighter::Fighter(SDLGame* game) :
 	fighterImage_(game->getServiceLocator()->getTextures()->getTexture(Resources::Airplanes), { 47, 90, 207, 250 }),
 	rotation__(SDLK_LEFT,SDLK_RIGHT,5),
 	thrust_(SDLK_UP,0.5,4.0),
-	reduceSpeed_(0.995)
+	reduceSpeed_(0.995),
+	normalGun_(SDLK_SPACE)
 {
 	setWidth(75);
 	setHeight(75);
@@ -23,22 +24,8 @@ void Fighter::handleInput(Uint32 time, const SDL_Event& event) {
 	if (event.type == SDL_KEYDOWN) {
 		rotation__.handleInput(event, this, time);
 		thrust_.handleInput(event, this, time);
-		switch (event.key.keysym.sym) {
-		case SDLK_SPACE: {
-			// add a bullet
-
-			/*Vector2D bulletPosition = position_
-					+ Vector2D(width_ / 2, height_ / 2)
-					+ Vector2D(0, -1).rotate(rotation_)*(height_/2+10);
-			Vector2D bulletVelocity = velocity_
-					+ Vector2D(0, -1).rotate(rotation_).normalize() * 3;
-			//bs_->addBullet(bulletPosition, bulletVelocity); */
-			break;
+		normalGun_.handleInput(this, time, event);
 		}
-		default:
-			break;
-		}
-	}
 }
 
 void Fighter::update(Uint32 time) {

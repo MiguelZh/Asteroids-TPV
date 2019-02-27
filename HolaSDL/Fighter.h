@@ -28,7 +28,7 @@ private:
 	RotationIC rotation__;
 	ThrustIC thrust_;
 	ReduceSpeedPC reduceSpeed_;
-	//GunIC normalGun_;*/
+	GunIC normalGun_;
 	//BulletsShooter* bs_;
 };
 
