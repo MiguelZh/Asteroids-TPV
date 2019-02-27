@@ -9,12 +9,11 @@ class Bullets :public GameObjectPool<Bullet,10>
 public:
 	Bullets(SDLGame * game);
 	virtual ~Bullets();
-	virtual void update(Uint32 time);
-	virtual void render(Uint32 time);
 private:
 	// components for Bullet
 	NaturalMovePC naturalMove_;
 	DeactivateOnBorderExit deactivate_;
-	ImageGC bulletImage_;
+	ImageGC bulletImage_;
+
 };
 

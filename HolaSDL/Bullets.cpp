@@ -20,21 +20,4 @@ Bullets::~Bullets()
 {
 }
 
-void Bullets::update(Uint32 time)
-{
-	for (Bullet * a : getAllObjects()) {
-		if (a->isActive()) {
-			a->update(time);
-		}
-	}
-}
-
-void Bullets::render(Uint32 time)
-{
-	for (Bullet * a : getAllObjects()) {
-		if (a->isActive()) {
-			a->update(time);
-		}
-	}
-}
 
