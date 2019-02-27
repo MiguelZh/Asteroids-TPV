@@ -8,16 +8,12 @@ class Asteroid : public Container
 {
 public:
 	Asteroid();
-	Asteroid(SDLGame* game);
 	virtual ~Asteroid();
-	void update(Uint32 time);
-	void render(Uint32 time);
-	void setComponents(Vector2D vel , Vector2D pos, double width, double height, ImageGC asteroidImage_,NaturalMovePC naturalMove, RotatingPC rotating ,ShowUpAtOppositeSidePC showUpAtOppositeSide);
 private:
-	ImageGC asteroidImage_;
+	/*ImageGC asteroidImage_;
 	NaturalMovePC naturalMove_;
 	RotatingPC rotating_;
-	ShowUpAtOppositeSidePC showUpAtOppositeSide_;
+	ShowUpAtOppositeSidePC showUpAtOppositeSide_;*/
 
 };
 

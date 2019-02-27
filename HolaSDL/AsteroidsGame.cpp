@@ -4,11 +4,11 @@
 using namespace std;
 
 AsteroidsGame::AsteroidsGame() :
-		SDLGame("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_),
-		demoContainer_(this),
-		fighter_(this),
-		asteroids_(this),
-		bullets_(this)
+	SDLGame("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_),
+	demoContainer_(this),
+	fighter_(this),
+	asteroids_(this),
+	bullets_(this)
 {
 	initGame();
 }
