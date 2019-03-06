@@ -31,6 +31,12 @@
     <Filter Include="Archivos de encabezado\GameObjects">
       <UniqueIdentifier>{f754dc2b-8932-4bf7-a485-f4452688703d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Graphics">
+      <UniqueIdentifier>{bb670527-888a-4f31-a8d0-7bd6f6247bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\Graphics">
+      <UniqueIdentifier>{2ee3ec35-46db-4e3d-a861-1180caa1741e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoundingBoxGC.h">
@@ -174,6 +180,27 @@
     <ClInclude Include="DeactivateOnBorderExit.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCtrlIC.h">
+      <Filter>Archivos de encabezado\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreViewerGC.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="LivesViewer.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStatusViewGC.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterAsteroidCollision.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletsAsteroidsCollision.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -309,6 +336,27 @@
       <Filter>Archivos de código fuente\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="DeactivateOnBorderExit.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCtrlIC.cpp">
+      <Filter>Archivos de código fuente\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreViewerGC.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="LivesViewer.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStatusViewGC.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="FighterAsteroidCollision.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletsAsteroidsCollision.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
   </ItemGroup>

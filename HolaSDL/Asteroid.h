@@ -10,10 +10,5 @@ public:
 	Asteroid();
 	virtual ~Asteroid();
 private:
-	/*ImageGC asteroidImage_;
-	NaturalMovePC naturalMove_;
-	RotatingPC rotating_;
-	ShowUpAtOppositeSidePC showUpAtOppositeSide_;*/
-
 };
 
