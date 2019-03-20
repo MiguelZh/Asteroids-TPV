@@ -1,6 +1,6 @@
 #include "GameCtrlIC.h"
 #include "Messages_defs.h"
-
+#include "GameManager.h"
 
 GameCtrlIC::GameCtrlIC()
 {

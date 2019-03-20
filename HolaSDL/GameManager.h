@@ -7,7 +7,7 @@
 class GameManager : public Container
 {
 public:
-	GameManager();
+	GameManager(SDLGame * game);
 	virtual ~GameManager();
 private:
 	// …
@@ -23,8 +23,9 @@ private:
 	ScoreViewerGC scoreView_;
 	GameStatusViewGC gameStatusView_;
 	LivesViewer livesViewer_;
-	/*FighterAsteroidCollision fighterAsteroidCollision_;
-	BulletsAsteroidsCollision bulletsAsteroidsCollision_;*/protected:
+	//FighterAsteroidCollision fighterAsteroidCollision_;
+	//BulletsAsteroidsCollision bulletsAsteroidsCollision_;
+protected:
 	bool getRunning();
 
 };
