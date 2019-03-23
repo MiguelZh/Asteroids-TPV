@@ -1,5 +1,7 @@
 #include "BulletsAsteroidsCollision.h"
 #include "GameManager.h"
+#include "Collisions.h"
+#include "Messages_defs.h"
 
 
 BulletsAsteroidsCollision::BulletsAsteroidsCollision()
@@ -20,12 +22,17 @@ void BulletsAsteroidsCollision::update(Container * c, Uint32 time)
 		{
 			bool collided = false;
 			// doble for, el for de dentro compara todas las balas con cada asteroid
+			//i = asteroids 
 			for (auto i = asteroids_->begin(); i != asteroids_->end() && !collided; i++)
 			{
-				if (fighter_->isActive() && (*i)->isActive() && Collisions::collidesWithRotation(fighter_, *i))
+				//j = bullets
+				for (auto j = bullets_->begin(); j != bullets_->end() && !collided; j++) 
 				{
-					c->globalSend(this, msg::FighterAsteroidCollisionMsg(msg::None, msg::Broadcast, fighter_, *i));
-					collided = true;
+					if ((*j)->isActive() && (*i)->isActive() && Collisions::collidesWithRotation(*j, *i))
+					{
+						c->globalSend(this, msg::BulletAsteroidCollision(msg::None,msg::Broadcast,*j,*i));
+						collided = true;
+					}
 				}
 			}
 		}
