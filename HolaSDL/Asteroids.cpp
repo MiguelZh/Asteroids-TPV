@@ -11,17 +11,10 @@ Asteroids::Asteroids(SDLGame* game) :
 	naturalMove_(),
 	showUpAtOppositeSide_()
 {
-/*	for (Asteroid *a :getAllObjects()) {
-		a->setActive(true);
-		Vector2D vel = { (double)game->getServiceLocator()->getRandomGenerator()->nextInt(1, 5),(double)game->getServiceLocator()->getRandomGenerator()->nextInt(1, 5) };
-		setVelocity(vel);
-		Vector2D pos = { (double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, game->getWindowWidth()),(double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, game->getWindowHeight()) };
-		setPosition(pos);
-		a->setComponents(getVelocity(), getPosition(), getWidth(), getHeight(), asteroidImage_, naturalMove_, rotating_, showUpAtOppositeSide_);
-	}*/
 	setWidth(20);
 	setHeight(20);
 
+	// adds all components to all asteroids but they dont spawn yet
 	for (Asteroid *a : getAllObjects()) {
 		a->addC(&rotating_);
 		a->addC(&asteroidImage_);
@@ -32,9 +25,10 @@ Asteroids::Asteroids(SDLGame* game) :
 		Vector2D pos = { (double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, game->getWindowWidth()),(double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, game->getWindowHeight()) };
 		a->setPosition(pos);
 		a->setWidth(getWidth());
-		a->setHeight(getHeight());
-		a->setActive(true);
+		a->setHeight(getHeight());		
 	}
+	Asteroid *a = getUnusedObject();
+	a->setActive(true);
 }
 Asteroids::~Asteroids()
 {

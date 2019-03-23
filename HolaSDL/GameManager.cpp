@@ -17,3 +17,13 @@ bool GameManager::getRunning()
 {
 	return running_;
 }
+
+int GameManager::getLives()
+{
+	return lives_; 
+}
+
+int GameManager::getScore()
+{
+	return score_;
+}

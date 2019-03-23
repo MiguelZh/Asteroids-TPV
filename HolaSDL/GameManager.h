@@ -9,6 +9,9 @@ class GameManager : public Container
 public:
 	GameManager(SDLGame * game);
 	virtual ~GameManager();
+	bool getRunning();
+	int getLives();
+	int getScore();
 private:
 	// …
 	static int const maxLives_ = 3;
@@ -26,7 +29,7 @@ private:
 	//FighterAsteroidCollision fighterAsteroidCollision_;
 	//BulletsAsteroidsCollision bulletsAsteroidsCollision_;
 protected:
-	bool getRunning();
+	
 
 };
 
