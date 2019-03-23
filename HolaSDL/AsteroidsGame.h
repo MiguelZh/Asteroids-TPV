@@ -10,6 +10,7 @@
 #include "Asteroids.h"
 #include "Asteroid.h"
 #include"Bullets.h"
+#include "GameManager.h"
 
 class AsteroidsGame: public SDLGame {
 
@@ -32,6 +33,7 @@ private:
 	const static int _WINDOW_HEIGHT_ = 600;
 	bool exit_;
 	std::vector<GameObject*> actors_;
+	GameManager gameManager_;
 	Fighter fighter_;
 	Asteroids asteroids_;
 	Bullets bullets_;

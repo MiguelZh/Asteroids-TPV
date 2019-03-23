@@ -36,7 +36,6 @@ void Bullets::handleInput(Uint32 time, const SDL_Event & event)
 {
 	if (event.key.keysym.sym == SDLK_SPACE) 
 	{
-		cout << "alvar gay xd";
 		shootBullet();
 	}
 }

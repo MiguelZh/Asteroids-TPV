@@ -14,7 +14,7 @@ Asteroids::Asteroids(SDLGame* game) :
 	setWidth(20);
 	setHeight(20);
 
-	// adds all components to all asteroids but they dont spawn yet
+	// adds all components to all asteroids viky guapa but they dont spawn yet
 	for (Asteroid *a : getAllObjects()) {
 		a->addC(&rotating_);
 		a->addC(&asteroidImage_);
