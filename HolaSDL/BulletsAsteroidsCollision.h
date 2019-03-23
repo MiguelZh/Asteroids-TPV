@@ -1,7 +1,12 @@
 #pragma once
 #include "PhysicsComponent.h"
+#include "Asteroid.h"
+#include "Bullet.h"
 class BulletsAsteroidsCollision : public PhysicsComponent
 {
+private:
+	const vector<Asteroid*>* asteroids_ = nullptr;
+	const vector<Bullet*>* bullets_ = nullptr;
 public:
 	BulletsAsteroidsCollision();
 	virtual ~BulletsAsteroidsCollision();
