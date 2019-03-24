@@ -79,6 +79,8 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 			for (int i = 1; i <3; i++) {
 				Asteroid *a = getUnusedObject();
 				a->setGenerations(x->getGenerations()-1);
+				//a->setWidth(x->getWidth() * 0.75);
+				//a->setHeight(x->getHeight() * 0.75);
 				a->scale(0.75);
 				a->setVelocity(x->getVelocity() * (1.1 * i)); // probando cosas para hacer el gameplay mas divertido
 				a->setRotation(x->getRotation() + i*30);
