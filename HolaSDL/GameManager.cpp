@@ -39,7 +39,7 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 	case msg::NO_MORE_ASTEROIDS:
 		running_ = false;
 		gameOver_ = true;
-		winner_ = 1;
+		winner_ = 2;
 		getGame()->getServiceLocator()->getAudios()->haltMusic(); // halt = stop
 		globalSend(this,msg::Message(msg::ROUND_OVER,msg::GameManager,msg::Broadcast));
 		globalSend(this, msg::Message(msg::GAME_OVER, msg::GameManager, msg::Broadcast));
@@ -51,7 +51,10 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 		if (lives_ > 0) {
 			globalSend(this, msg::Message(msg::ROUND_OVER, msg::GameManager, msg::Broadcast));
 		}
-		else { globalSend(this, msg::Message(msg::GAME_OVER, msg::GameManager, msg::Broadcast)); }
+		else {
+			winner_ = 1;
+			globalSend(this, msg::Message(msg::GAME_OVER, msg::GameManager, msg::Broadcast));
+		}
 		break;
 	default:
 		break;
