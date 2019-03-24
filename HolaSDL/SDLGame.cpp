@@ -111,11 +111,11 @@ void SDLGame::addObserver(Observer* o) {
 
 void SDLGame::send(const void* senderObj, const msg::Message& msg) {
 	for (Observer* o : observers_) {
-	/*	if (senderObj != o) {
+		if (senderObj != o) {
 			if (msg.destination_ == msg::Broadcast // we send to everyone, even to the one from whom we received the message!
 			|| msg.destination_ == o->getId()) {
 				o->receive(senderObj,msg);
 			}
-		}*/
+		}
 	}
 }

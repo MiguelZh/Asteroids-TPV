@@ -40,7 +40,7 @@ void Fighter::receive(const void * senderObj, const msg::Message & msg)
 	case msg::ROUND_START:
 		setActive(true);
 		setVelocity({ 0,0 });
-		setPosition({ getGame()->getWindowWidth() / 2, getGame()->getWindowHeight() / 2 });
+		setPosition({ (double)getGame()->getWindowWidth() / 2, (double)getGame()->getWindowHeight() / 2 });
 		break;
 		case msg::ROUND_OVER:
 			setActive(false);

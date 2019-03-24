@@ -1,6 +1,5 @@
 #include "Bullets.h"
 #include "Messages_defs.h"
-#include "Messages_decl.h"
 
 Bullets::Bullets(SDLGame * game):
 	GameObjectPool(game),
@@ -48,10 +47,12 @@ void Bullets::receive(const void * senderObj, const msg::Message & msg)
 	case msg::ROUND_OVER:
 		deactiveAllObjects();
 		setActive(false);
+		break;
 	case msg::BULLET_ASTEROID_COLLISION:
+	{  // si no pongo los corchetes da eror c2360
 		Bullet * x = static_cast<const msg::BulletAsteroidCollision&>(msg).bullet_; // bala colisionada
 		x->setActive(false);
-		break;
+		break; }
 	case msg::FIGHTER_SHOOT:
 		Bullet * b = getUnusedObject();
 		if (b != nullptr) {
@@ -64,8 +65,6 @@ void Bullets::receive(const void * senderObj, const msg::Message & msg)
 		}
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::GunShot,0);
 		break;		
-	default:
-		break;
 	}
 }
 

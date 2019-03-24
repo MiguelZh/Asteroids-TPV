@@ -12,7 +12,7 @@ class GameManager : public Container
 public:
 	GameManager(SDLGame * game);
 	virtual ~GameManager();
-
+	virtual void receive(const void * senderObj, const msg::Message & msg);
 	bool getRunning();
 	int getLives();
 	int getMaxLives();
