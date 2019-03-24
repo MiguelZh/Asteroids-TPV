@@ -9,6 +9,9 @@ class Asteroid : public Container
 public:
 	Asteroid();
 	virtual ~Asteroid();
+	int getGenerations();
+	void setGenerations(int generations);
 private:
+	int generations_;
 };
 
