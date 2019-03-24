@@ -65,6 +65,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 	case msg::ROUND_OVER:
 		deactiveAllObjects();
 		setActive(false);
+		break;
 	case msg::BULLET_ASTEROID_COLLISION:
 		Asteroid* x = static_cast<const msg::BulletAsteroidCollision&>(msg).asteroid_; // asteroid destruido
 		x->setActive(false);
@@ -77,7 +78,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 				a->setGenerations(x->getGenerations()-1);
 				a->setWidth(x->getWidth() * 0.75);
 				a->setHeight(x->getHeight() * 0.75);
-				a->setVelocity(x->getVelocity() * 1.1);
+				a->setVelocity(x->getVelocity() * (1.1));
 				a->setRotation(x->getRotation() + i*30);
 				a->setPosition(x->getPosition() + x->getVelocity() * getGame()->getServiceLocator()->getRandomGenerator()->nextInt(-1,1));
 				a->setActive(true);
