@@ -53,6 +53,10 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 		}
 		else {
 			winner_ = 1;
+			running_ = false;
+			gameOver_ = true;
+			getGame()->getServiceLocator()->getAudios()->haltMusic(); // halt = stop
+			globalSend(this, msg::Message(msg::ROUND_OVER, msg::GameManager, msg::Broadcast));
 			globalSend(this, msg::Message(msg::GAME_OVER, msg::GameManager, msg::Broadcast));
 		}
 		break;

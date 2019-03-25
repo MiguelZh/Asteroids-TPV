@@ -39,7 +39,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::ROUND_START:
 		setActive(true);
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 10; i++) {
 			Asteroid *a = getUnusedObject();
 			a->setGenerations(3);
 			a->setWidth(40);
