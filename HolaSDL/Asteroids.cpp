@@ -24,7 +24,7 @@ Asteroids::Asteroids(SDLGame* game) :
 		a->setVelocity({ 0,0 });
 		a->setGenerations(3);
 	}
-}
+} 
 Asteroids::~Asteroids()
 {
 }
