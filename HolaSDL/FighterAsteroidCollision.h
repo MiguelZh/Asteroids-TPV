@@ -10,5 +10,6 @@ public:
 	FighterAsteroidCollision();
 	virtual ~FighterAsteroidCollision();
 	virtual void update(Container* c, Uint32 time);
+	virtual void receive(Container* c, const msg::Message& msg);
 };
 

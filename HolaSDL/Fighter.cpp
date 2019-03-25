@@ -8,11 +8,11 @@ Fighter::Fighter(SDLGame* game) :
 	reduceSpeed_(0.995),
 	normalGun_(SDLK_SPACE)
 {
+	setId(msg::Fighter);
 	setWidth(75);
 	setHeight(75);
-	setPosition(Vector2D(game->getWindowWidth() / 2, game->getWindowHeight() / 2));
 	setRotation(0.5);
-	setVelocity({ 1, 1 });
+	setActive(false);
 	addC(&fighterImage_);
 	addC(&naturalMove_);
 	addC(&oppositeSide_);
@@ -26,4 +26,26 @@ Fighter::Fighter(SDLGame* game) :
 
 Fighter::~Fighter() {
 
+}
+
+void Fighter::receive(const void * senderObj, const msg::Message & msg)
+{
+	Container::receive(senderObj, msg);
+
+	switch (msg.type_)
+	{
+	case msg::GAME_START:
+		globalSend(this, msg::FighterInfo(msg::Fighter, msg::Broadcast, this)); // primer this porque envias todo el fighter, no te interesa el parametro
+		break;
+	case msg::ROUND_START:
+		setActive(true);
+		setVelocity({ 0,0 });
+		setPosition({ (double)getGame()->getWindowWidth() / 2, (double)getGame()->getWindowHeight() / 2 });
+		break;
+		case msg::ROUND_OVER:
+			setActive(false);
+			break;
+	default:
+		break;
+	}
 }

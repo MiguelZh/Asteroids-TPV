@@ -7,6 +7,7 @@ class Asteroids : public GameObjectPool<Asteroid, 50>
 public:
 	Asteroids(SDLGame* game);
 	virtual ~Asteroids();
+	virtual void receive(const void* senderObj, const msg::Message& msg);
 private:
 	// component for Asteroid
 	ImageGC asteroidImage_;

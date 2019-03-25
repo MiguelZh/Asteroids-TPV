@@ -18,6 +18,7 @@ class Fighter : public Container {
 public:
 	Fighter(SDLGame* game);
 	virtual ~Fighter();
+	virtual void receive(const void* senderObj, const msg::Message& msg);
 private:
 	ImageGC fighterImage_;	
 	NaturalMovePC naturalMove_;

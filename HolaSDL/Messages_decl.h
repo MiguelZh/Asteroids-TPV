@@ -10,6 +10,8 @@ enum ObjectId {
 	Asteroids,
 	BulletsShooter,
 	FighterGun,
+	Bullets,
+	GameManager,
 };
 
 enum MessageType {

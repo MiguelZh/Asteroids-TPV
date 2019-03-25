@@ -1,5 +1,6 @@
 #pragma once
 #include "GraphicsComponent.h"
+
 class ScoreViewerGC : public GraphicsComponent
 {
 public:

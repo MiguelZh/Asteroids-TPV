@@ -4,14 +4,22 @@
 #include "ScoreViewerGC.h"
 #include "GameStatusViewGC.h"
 #include "LivesViewer.h"
+#include "FighterAsteroidCollision.h"
+#include "BulletsAsteroidsCollision.h"
+
 class GameManager : public Container
 {
 public:
 	GameManager(SDLGame * game);
 	virtual ~GameManager();
+	virtual void receive(const void * senderObj, const msg::Message & msg);
 	bool getRunning();
 	int getLives();
+	int getMaxLives();
 	int getScore();
+	int getWinner();
+	bool getGameOver();
+
 private:
 	// …
 	static int const maxLives_ = 3;
@@ -26,8 +34,8 @@ private:
 	ScoreViewerGC scoreView_;
 	GameStatusViewGC gameStatusView_;
 	LivesViewer livesViewer_;
-	//FighterAsteroidCollision fighterAsteroidCollision_;
-	//BulletsAsteroidsCollision bulletsAsteroidsCollision_;
+	FighterAsteroidCollision fighterAsteroidCollision_;
+	BulletsAsteroidsCollision bulletsAsteroidsCollision_;
 protected:
 	
 

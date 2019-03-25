@@ -11,5 +11,6 @@ public:
 	BulletsAsteroidsCollision();
 	virtual ~BulletsAsteroidsCollision();
 	virtual void update(Container* c, Uint32 time);
+	virtual void receive(Container* c, const msg::Message& msg);
 };
 
