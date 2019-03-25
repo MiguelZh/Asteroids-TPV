@@ -71,7 +71,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::BULLET_ASTEROID_COLLISION:
 		Asteroid* x = static_cast<const msg::BulletAsteroidCollision&>(msg).asteroid_; // asteroid destruido
-		int randomX, randomY;
+		int randomX, randomY; int generations = x->getGenerations(); int width = x->getWidth(); int height = x->getHeight();
 		double velX, velY;
 		x->setActive(false);
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::Explosion, 0);
@@ -98,13 +98,11 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 				case 1:
 					velY = 1.5;
 					break;
-				}
-
+				}				
 				Asteroid *a = getUnusedObject();
-				a->setGenerations(x->getGenerations()-1);
-				//a->setWidth(x->getWidth() * 0.75);
-				//a->setHeight(x->getHeight() * 0.75);
-				a->scale(0.75);
+				a->setGenerations(generations- 1);
+				a->setWidth( width * 0.75);
+				a->setHeight(height * 0.75);				
 				a->setVelocity(Vector2D(x->getVelocity().getX() * velX, x->getVelocity().getY() * velY)); // probando cosas para hacer el gameplay mas divertido
 				a->setRotation(x->getRotation() + i*30);
 				a->setPosition(x->getPosition() + x->getVelocity() * getGame()->getServiceLocator()->getRandomGenerator()->nextInt(-1,1));
