@@ -71,18 +71,41 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::BULLET_ASTEROID_COLLISION:
 		Asteroid* x = static_cast<const msg::BulletAsteroidCollision&>(msg).asteroid_; // asteroid destruido
+		int randomX, randomY;
+		double velX, velY;
 		x->setActive(false);
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::Explosion, 0);
 		globalSend(this, msg::AsteroidDestroyed(msg::Asteroids,msg::Broadcast, 4 - x->getGenerations()));
 		if(x->getGenerations() > 1)
 		{	
 			for (int i = 1; i <3; i++) {
+				randomX = getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, 2);
+				randomY = getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, 2);
+				switch (randomX)
+				{
+				case 0:
+					velX = -1.5;
+					break;
+				case 1:
+					velX = 1.5;
+					break;
+				}
+				switch (randomY)
+				{
+				case 0:
+					velY = -1.5;
+					break;
+				case 1:
+					velY = 1.5;
+					break;
+				}
+
 				Asteroid *a = getUnusedObject();
 				a->setGenerations(x->getGenerations()-1);
 				//a->setWidth(x->getWidth() * 0.75);
 				//a->setHeight(x->getHeight() * 0.75);
 				a->scale(0.75);
-				a->setVelocity(x->getVelocity() * (1.1 * i)); // probando cosas para hacer el gameplay mas divertido
+				a->setVelocity(Vector2D(x->getVelocity().getX() * velX, x->getVelocity().getY() * velY)); // probando cosas para hacer el gameplay mas divertido
 				a->setRotation(x->getRotation() + i*30);
 				a->setPosition(x->getPosition() + x->getVelocity() * getGame()->getServiceLocator()->getRandomGenerator()->nextInt(-1,1));
 				a->setActive(true);
