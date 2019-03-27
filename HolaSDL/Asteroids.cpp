@@ -41,6 +41,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		setActive(true);
 		for (int i = 0; i < 10; i++) {
 			Asteroid *a = getUnusedObject();
+//			if (a != nullptr)
 			a->setGenerations(3);
 			a->setWidth(40);
 			a->setHeight(40);
@@ -73,7 +74,6 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		Asteroid* x = static_cast<const msg::BulletAsteroidCollision&>(msg).asteroid_; // asteroid destruido
 		int randomX, randomY; int generations = x->getGenerations(); int width = x->getWidth(); int height = x->getHeight();
 		double velX, velY;
-		x->setActive(false);
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::Explosion, 0);
 		globalSend(this, msg::AsteroidDestroyed(msg::Asteroids,msg::Broadcast, 4 - x->getGenerations()));
 		if(x->getGenerations() > 1)
@@ -108,6 +108,8 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 				a->setPosition(x->getPosition() + x->getVelocity() * getGame()->getServiceLocator()->getRandomGenerator()->nextInt(-1,1));
 				a->setActive(true);
 			}
+			x->setActive(false);
+
 		}
 		else if (x->getGenerations() <= 1) {
 			bool moreAsteroids = false;
