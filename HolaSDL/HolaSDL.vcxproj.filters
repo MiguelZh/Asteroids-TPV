@@ -186,9 +186,6 @@
     <ClInclude Include="BulletsAsteroidsCollision.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="InputHandler.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
@@ -203,6 +200,12 @@
     </ClInclude>
     <ClInclude Include="StopOnBordersPC.h">
       <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Archivos de encabezado\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -347,9 +350,6 @@
     <ClCompile Include="BulletsAsteroidsCollision.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="InputHandler.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Archivos de código fuente\GameObjects</Filter>
     </ClCompile>
@@ -364,6 +364,12 @@
     </ClCompile>
     <ClCompile Include="StopOnBordersPC.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Archivos de código fuente\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
