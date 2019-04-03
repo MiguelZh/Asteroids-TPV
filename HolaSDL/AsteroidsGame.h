@@ -11,6 +11,7 @@
 #include "Asteroid.h"
 #include"Bullets.h"
 #include "GameManager.h"
+#include "InputHandler.h"
 
 class AsteroidsGame: public SDLGame {
 

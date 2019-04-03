@@ -7,6 +7,6 @@ class GameCtrlIC : public InputComponent
 public:
 	GameCtrlIC();
 	virtual ~GameCtrlIC();
-	virtual void handleInput(Container* c, Uint32 time, const SDL_Event& event);
+	virtual void handleInput(Container* c, Uint32 time);
 };
 

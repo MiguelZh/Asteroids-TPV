@@ -14,7 +14,7 @@ ThrustIC::~ThrustIC()
 {
 }
 
-void ThrustIC::handleInput(Container * c, Uint32 time, const SDL_Event & event)
+void ThrustIC::handleInput(Container * c, Uint32 time)
 {
 	// increase velocity
 	if (event.key.keysym.sym == up_) {

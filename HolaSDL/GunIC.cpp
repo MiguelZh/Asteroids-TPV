@@ -12,7 +12,7 @@ GunIC::~GunIC()
 {
 }
 
-void GunIC::handleInput(Container * c, Uint32 time, const SDL_Event & event)
+void GunIC::handleInput(Container * c, Uint32 time)
 {
 	if (event.key.keysym.sym == space_ && event.type == SDL_KEYDOWN) {
 		Vector2D p = c->getPosition() + Vector2D(c->getWidth() / 2.0, c->getHeight() / 2.0) + Vector2D(0.0, -(c->getHeight() / 2.0 + 5.0)).rotate(c->getRotation());

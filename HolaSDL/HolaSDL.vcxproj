@@ -40,6 +40,7 @@
     <ClInclude Include="GunIC.h" />
     <ClInclude Include="ImageGC.h" />
     <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="LivesViewer.h" />
     <ClInclude Include="Messages_decl.h" />
     <ClInclude Include="Messages_defs.h" />
@@ -96,6 +97,7 @@
     <ClCompile Include="GunIC.cpp" />
     <ClCompile Include="ImageGC.cpp" />
     <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="LivesViewer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NaturalMovePC.cpp" />
@@ -124,7 +126,7 @@
     <ProjectGuid>{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}</ProjectGuid>
     <RootNamespace>HolaSDL</RootNamespace>
     <ProjectName>HolaSDL</ProjectName>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

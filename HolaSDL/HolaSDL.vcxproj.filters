@@ -75,19 +75,7 @@
     <ClInclude Include="FontsManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObjectPool.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicsComponent.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="ImageGC.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="InputComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Observer.h">
@@ -118,9 +106,6 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="SRandBasedGenerator.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="StopOnBordersPC.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
@@ -201,6 +186,24 @@
     <ClInclude Include="BulletsAsteroidsCollision.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectPool.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsComponent.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Archivos de encabezado\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="StopOnBordersPC.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -242,19 +245,7 @@
     <ClCompile Include="FontsManager.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObjectPool.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicsComponent.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
     <ClCompile Include="ImageGC.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="InputComponent.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -282,9 +273,6 @@
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="SRandBasedGenerator.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="StopOnBordersPC.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
@@ -357,6 +345,24 @@
       <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
     <ClCompile Include="BulletsAsteroidsCollision.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectPool.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsComponent.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Archivos de código fuente\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="StopOnBordersPC.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
   </ItemGroup>

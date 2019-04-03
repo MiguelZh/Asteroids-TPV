@@ -14,7 +14,7 @@ RotationIC::~RotationIC()
 {
 }
 
-void RotationIC::handleInput(Container * c, Uint32 time, const SDL_Event & event)
+void RotationIC::handleInput(Container * c, Uint32 time)
 {
 	if (event.key.keysym.sym == right_) // rotate fighter to left
 	{
