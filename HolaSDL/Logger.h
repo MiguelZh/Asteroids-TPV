@@ -1,20 +1,16 @@
 #pragma once
 #include <string>
-
+#include<iostream>
+#include <fstream>
+#include<memory>
+#include "Worker.h"
 using namespace std;
+
 class Logger
 {
 public:
-	Logger();
-	virtual ~Logger();
-	inline static void initInstance(string filename) {  }
-	inline static Logger* instance() {
-		if (logger_ == nullptr) {
-			logger_ = new Logger();
-		}
-
-		return logger_;
-	}
+	inline static void initInstance(string filename);
+	inline static Logger* instance();
 	void log(string info);
 	void log(function<string()> f);
 
@@ -22,6 +18,9 @@ public:
 	Logger(Logger&) = delete;
 	Logger& operator=(const Logger&) = delete;
 private:
-	static Logger* logger_;
+	Logger(string filename);
+	virtual ~Logger();
+	static unique_ptr <Logger> instance_;
 	ofstream log_;
+	Worker worker_;
 };
