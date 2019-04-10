@@ -1,6 +1,7 @@
 #include"Asteroids.h"
 #include"Messages_defs.h"
-
+#include "Logger.h"
+#include <sstream>º
 
 
 Asteroids::Asteroids(SDLGame* game) :
@@ -13,7 +14,7 @@ Asteroids::Asteroids(SDLGame* game) :
 	setId(msg::Asteroids);
 	setWidth(40);
 	setHeight(40);
-	// adds all components to all asteroids viky guapa but they dont spawn yet
+	// adds all components to all asteroids but they dont spawn yet
 	for (Asteroid *a : getAllObjects()) {
 		a->addC(&rotating_);
 		a->addC(&asteroidImage_);
@@ -46,22 +47,33 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 			a->setWidth(40);
 			a->setHeight(40);
 			int borde = getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, 4);
+			Vector2D p;
 			switch (borde) {
 			case 0: // derecha
-				a->setPosition({(double)getGame()->getWindowWidth(),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowHeight()) });
+				p = { (double)getGame()->getWindowWidth(),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowHeight()) };
+				a->setPosition(p);
 				break;
 			case 1: // arriba
-				a->setPosition({ (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowWidth()),0 });
+				p = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowWidth()),0 };
+				a->setPosition(p);
 				break;
 			case 2: // izquierda
-				a->setPosition({ 0,(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowHeight()) });
+				p = { 0,(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowHeight()) };
+				a->setPosition(p);
 				break;
 			case 3: // abajo
-				a->setPosition({ (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowWidth()),(double)getGame()->getWindowHeight() });
+				p = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, (double)getGame()->getWindowWidth()),(double)getGame()->getWindowHeight() };
+				a->setPosition(p);
 				break;
 			}
 			Vector2D c = Vector2D((double)getGame()->getWindowWidth() / 2, (double)getGame()->getWindowHeight() / 2);
 			Vector2D v = (c - a->getPosition()).normalize() * ((double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(1, 10) / 20.0);
+			// al crear un asteroide, p es la posición y v es la velocidad del asteroide
+			Logger::getInstance()->log([p, v]() {
+				stringstream s;
+				s << "New asteroid: " << p << " " << v;
+				return s.str();
+			});
 			a->setVelocity(v);
 			a->setActive(true);
 		}
