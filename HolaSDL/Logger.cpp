@@ -1,5 +1,6 @@
 #include "Logger.h"
 
+ unique_ptr <Logger> Logger::instance_;
 //Logger* Logger::instance_ = nullptr;
 
 Logger::Logger(string filename)
@@ -14,17 +15,6 @@ Logger::~Logger()
 	log_.close();
 }
 
-inline void Logger::initInstance(string filename)
-{
-	if (instance_.get() == nullptr) {
-		instance_.reset(new Logger(filename));
-	}
-}
-
-inline Logger * Logger::instance()
-{
-	return instance_.get();
-}
 
 void Logger::log(string info)
 {

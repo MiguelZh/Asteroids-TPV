@@ -1,5 +1,5 @@
 #include "AsteroidsGame.h"
-
+#include "Logger.h"
 
 using namespace std;
 
@@ -12,6 +12,7 @@ AsteroidsGame::AsteroidsGame() :
 	bullets_(this)
 {
 	initGame();
+	Logger::getInstance()->initInstance("log.txt");
 }
 
 AsteroidsGame::~AsteroidsGame() {

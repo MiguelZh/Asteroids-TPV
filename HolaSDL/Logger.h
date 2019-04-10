@@ -9,8 +9,17 @@ using namespace std;
 class Logger
 {
 public:
-	inline static void initInstance(string filename);
-	inline static Logger* instance();
+	static inline void initInstance(string filename)
+	{
+		if (instance_.get() == nullptr) {
+			instance_.reset(new Logger(filename));
+		}
+	}
+
+	static inline Logger * getInstance()
+	{
+		return instance_.get();
+	}
 	void log(string info);
 	void log(function<string()> f);
 	virtual ~Logger();
