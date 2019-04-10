@@ -13,13 +13,12 @@ public:
 	inline static Logger* instance();
 	void log(string info);
 	void log(function<string()> f);
-
+	virtual ~Logger();
 
 	Logger(Logger&) = delete;
 	Logger& operator=(const Logger&) = delete;
 private:
 	Logger(string filename);
-	virtual ~Logger();
 	static unique_ptr <Logger> instance_;
 	ofstream log_;
 	Worker worker_;

@@ -26,3 +26,14 @@ inline Logger * Logger::instance()
 	return instance_.get();
 }
 
+void Logger::log(string info)
+{
+	worker_.execute([info,this]() { log_ << info << endl; });
+}
+
+void Logger::log(function<string()> f)
+{
+	worker_.execute([f, this]() {log_ << f() << endl; });
+}
+
+
