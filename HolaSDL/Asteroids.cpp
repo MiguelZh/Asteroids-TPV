@@ -1,7 +1,7 @@
 #include"Asteroids.h"
 #include"Messages_defs.h"
 #include "Logger.h"
-#include <sstream>º
+#include <sstream>
 
 
 Asteroids::Asteroids(SDLGame* game) :

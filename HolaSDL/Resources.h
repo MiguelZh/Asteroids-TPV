@@ -22,7 +22,7 @@ public:
 		Asteroid,
 		Badges,
 		WhiteRect,
-
+		BlackHole,
 		// text
 		HelloWorld,
 		PressAnyKey,

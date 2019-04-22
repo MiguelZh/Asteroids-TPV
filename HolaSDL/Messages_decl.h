@@ -12,6 +12,7 @@ enum ObjectId {
 	FighterGun,
 	Bullets,
 	GameManager,
+	BlackHoles
 };
 
 enum MessageType {
