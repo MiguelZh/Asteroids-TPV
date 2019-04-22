@@ -19,6 +19,7 @@ rotating_((double)game->getServiceLocator()->getRandomGenerator()->nextInt(8 ,20
 		//TODO : make blackholes not spawn in the middle
 		b->setPosition({ (double)game->getServiceLocator()->getRandomGenerator()->nextInt(0, game->getWindowWidth()),(double)game->getServiceLocator()->getRandomGenerator()->nextInt(0 ,game->getWindowHeight()) });
 	}
+	setActive(true);
 }
 
 

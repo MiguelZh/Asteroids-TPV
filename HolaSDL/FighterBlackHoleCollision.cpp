@@ -16,6 +16,7 @@ FighterBlackHoleCollision::~FighterBlackHoleCollision()
 void FighterBlackHoleCollision::update(Container * c, Uint32 time)
 {
 	//pending
+	int a = 10;
 }
 
 void FighterBlackHoleCollision::receive(Container * c, const msg::Message & msg)

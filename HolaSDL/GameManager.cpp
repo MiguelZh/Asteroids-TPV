@@ -4,7 +4,7 @@
 
 
 GameManager::GameManager(SDLGame * game): Container(game), running_(false), gameOver_(true), score_(0), lives_(maxLives_)
-, winner_(0), gameCtrl_(), scoreView_(), gameStatusView_(), livesViewer_(), fighterAsteroidCollision_(), bulletsAsteroidsCollision_()
+, winner_(0), gameCtrl_(), scoreView_(), gameStatusView_(), livesViewer_(), fighterAsteroidCollision_(), bulletsAsteroidsCollision_(), fighterBlackHoleCollision_()
 {
 	setId(msg::GameManager);
 	addC(&gameCtrl_);
@@ -13,6 +13,7 @@ GameManager::GameManager(SDLGame * game): Container(game), running_(false), game
 	addC(&gameStatusView_);
 	addC(&fighterAsteroidCollision_);
 	addC(&bulletsAsteroidsCollision_);
+	addC(&fighterBlackHoleCollision_);
 }
 
 
