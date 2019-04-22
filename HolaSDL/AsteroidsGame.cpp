@@ -9,10 +9,12 @@ AsteroidsGame::AsteroidsGame() :
 	demoContainer_(this),
 	fighter_(this),
 	asteroids_(this),
-	bullets_(this)
+	bullets_(this),
+	blackHoles_(this)
 {
 	initGame();
-	Logger::getInstance()->initInstance("log.txt");
+	Logger::getInstance()->initInstance("log.txt");
+
 }
 
 AsteroidsGame::~AsteroidsGame() {
@@ -25,11 +27,13 @@ void AsteroidsGame::initGame() {
 	actors_.push_back(&fighter_);
 	actors_.push_back(&asteroids_);
 	actors_.push_back(&bullets_);
+	actors_.push_back(&blackHoles_);
 	//observadores
 	addObserver(&fighter_);
 	addObserver(&gameManager_);
 	addObserver(&asteroids_);
 	addObserver(&bullets_);
+	addObserver(&blackHoles_);
 }
 
 void AsteroidsGame::closeGame() {

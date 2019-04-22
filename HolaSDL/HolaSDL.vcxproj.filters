@@ -213,6 +213,15 @@
     <ClInclude Include="Worker.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="BlackHoles.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackHole.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterBlackHoleCollision.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -382,6 +391,15 @@
     </ClCompile>
     <ClCompile Include="Worker.cpp">
       <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackHoles.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="BlackHole.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="FighterBlackHoleCollision.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
