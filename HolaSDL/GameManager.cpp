@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "Messages_defs.h"
+#include "Logger.h"
 
 
 GameManager::GameManager(SDLGame * game): Container(game), running_(false), gameOver_(true), score_(0), lives_(maxLives_)
@@ -32,6 +33,7 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 	case msg::ROUND_START:
 		running_ = true;
 		getGame()->getServiceLocator()->getAudios()->playMusic(Resources::ImperialMarch);
+		Logger::getInstance()->log("Round Start");
 		break;
 	case msg::ASTEROID_DESTROYED:
 		score_ +=  static_cast<const msg::AsteroidDestroyed&>(msg).points_;
@@ -50,6 +52,7 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 		lives_--;
 		if (lives_ > 0) {
 			globalSend(this, msg::Message(msg::ROUND_OVER, msg::GameManager, msg::Broadcast));
+			Logger::getInstance()->log("Round End");
 		}
 		else {
 			winner_ = 1;
