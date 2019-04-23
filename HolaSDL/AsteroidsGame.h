@@ -41,5 +41,4 @@ private:
 	Bullets bullets_;
 	DemoContainer demoContainer_;
 	BlackHoles blackHoles_;
-
 };

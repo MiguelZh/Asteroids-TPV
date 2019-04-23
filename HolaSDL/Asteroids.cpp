@@ -42,7 +42,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		setActive(true);
 		for (int i = 0; i < 10; i++) {
 			Asteroid *a = getUnusedObject();
-//			if (a != nullptr)
+			if (a != nullptr){
 			a->setGenerations(3);
 			a->setWidth(40);
 			a->setHeight(40);
@@ -76,6 +76,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 			});
 			a->setVelocity(v);
 			a->setActive(true);
+		}
 		}
 		break;
 	case msg::ROUND_OVER:
