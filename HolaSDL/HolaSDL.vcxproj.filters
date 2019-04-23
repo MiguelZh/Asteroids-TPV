@@ -222,6 +222,12 @@
     <ClInclude Include="FighterBlackHoleCollision.h">
       <Filter>Archivos de encabezado\Physics</Filter>
     </ClInclude>
+    <ClInclude Include="BulletsBlackHolesCollision.h">
+      <Filter>Archivos de encabezado\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidsBlackHoleCollision.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -400,6 +406,12 @@
     </ClCompile>
     <ClCompile Include="FighterBlackHoleCollision.cpp">
       <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletsBlackHolesCollision.cpp">
+      <Filter>Archivos de código fuente\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="AsteroidsBlackHoleCollision.cpp">
+      <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

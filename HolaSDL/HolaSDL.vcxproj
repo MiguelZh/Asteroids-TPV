@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Asteroids.h" />
+    <ClInclude Include="AsteroidsBlackHoleCollision.h" />
     <ClInclude Include="AsteroidsGame.h" />
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BlackHole.h" />
@@ -23,6 +24,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="BulletsAsteroidsCollision.h" />
+    <ClInclude Include="BulletsBlackHolesCollision.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Container.h" />
@@ -76,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Asteroids.cpp" />
+    <ClCompile Include="AsteroidsBlackHoleCollision.cpp" />
     <ClCompile Include="AsteroidsGame.cpp" />
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="BlackHole.cpp" />
@@ -86,6 +89,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Bullets.cpp" />
     <ClCompile Include="BulletsAsteroidsCollision.cpp" />
+    <ClCompile Include="BulletsBlackHolesCollision.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Container.cpp" />

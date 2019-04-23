@@ -41,6 +41,22 @@ namespace msg {
 		Bullet* bullet_;
 		Asteroid* asteroid_;
 	};
+	struct AsteroidBlackHoleCollision : public msg::Message {
+		AsteroidBlackHoleCollision(msg::ObjectId sender, msg::ObjectId destination, BlackHole* blackHole, Asteroid* asteroid) :
+			Message(msg::ASTEROID_BLACKHOLE_COLLISION, sender, destination), blackHole_(blackHole), asteroid_(asteroid) {
+		}
+
+		BlackHole* blackHole_;
+		Asteroid* asteroid_;
+	};
+	struct BulletBlackHoleCollision : public msg::Message {
+		BulletBlackHoleCollision(msg::ObjectId sender, msg::ObjectId destination, Bullet* bullet, BlackHole* blackHole) :
+			Message(msg::BULLET_BLACKHOLE_COLLISION, sender, destination), bullet_(bullet), blackHole_(blackHole) {
+		}
+
+		Bullet* bullet_;
+		BlackHole* blackHole_;
+	};
 
 	struct FighterAsteroidCollisionMsg : public msg::Message {
 		FighterAsteroidCollisionMsg(msg::ObjectId sender, msg::ObjectId destination, GameObject* fighter, Asteroid* asteroid) :
@@ -49,6 +65,14 @@ namespace msg {
 
 		GameObject* fighter_;
 		Asteroid* asteroid_;
+	};
+	struct FighterBlackHoleCollisionMsg : public msg::Message {
+		FighterBlackHoleCollisionMsg(msg::ObjectId sender, msg::ObjectId destination, GameObject* fighter, BlackHole* blackhole) :
+			Message(msg::FIGHTER_BLACKHOLE_COLLISION, sender, destination), fighter_(fighter), blackhole_(blackhole) {
+		}
+
+		GameObject* fighter_;
+		BlackHole* blackhole_;
 	};
 
 	struct AsteroidDestroyed : public msg::Message {

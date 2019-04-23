@@ -85,7 +85,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::BULLET_ASTEROID_COLLISION:
 		Asteroid* x = static_cast<const msg::BulletAsteroidCollision&>(msg).asteroid_; // asteroid destruido
-		int randomX, randomY; int generations = x->getGenerations(); int width = x->getWidth(); int height = x->getHeight();
+ 		int randomX, randomY; int generations = x->getGenerations(); int width = x->getWidth(); int height = x->getHeight();
 		double velX, velY;
 		x->setActive(false);
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::Explosion, 0);

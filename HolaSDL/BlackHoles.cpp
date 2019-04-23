@@ -2,7 +2,8 @@
 #include"Messages_defs.h"
 #include "Logger.h"
 #include <sstream>
-
+#include "Bullet.h"
+#include "Asteroid.h"
 BlackHoles::BlackHoles(SDLGame* game) : GameObjectPool(game),
 blackHoleImage_(getGame()->getServiceLocator()->getTextures()->getTexture(Resources::BlackHole)),
 rotating_((double)game->getServiceLocator()->getRandomGenerator()->nextInt(8 ,20))
@@ -35,7 +36,8 @@ void BlackHoles::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::ROUND_START:
 		setActive(true);
-		for (BlackHole* b : getAllObjects()) {
+		for (int i = 0; i < 5; i++) {
+			BlackHole* b = getUnusedObject();
 			Vector2D pos = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth()),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0 ,getGame()->getWindowHeight()) };
 			b->setPosition(pos);
 			b->setActive(true);
@@ -45,9 +47,10 @@ void BlackHoles::receive(const void * senderObj, const msg::Message & msg)
 		deactiveAllObjects();
 		setActive(false);
 		break;
-	case msg::BULLET_BLACKHOLE_COLLISION:
-		break;
-	case msg::FIGHTER_BLACKHOLE_COLLISION:
+	case msg::ASTEROID_BLACKHOLE_COLLISION:
+		Asteroid* x = static_cast<const msg::AsteroidBlackHoleCollision&>(msg).asteroid_; // asteroid destruido
+		Vector2D randomPos = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth()),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0 ,getGame()->getWindowHeight()) };
+		x->setPosition(randomPos);
 		break;
 	}
 

@@ -7,6 +7,8 @@
 #include "FighterAsteroidCollision.h"
 #include "BulletsAsteroidsCollision.h"
 #include "FighterBlackHoleCollision.h"
+#include "BulletsBlackHolesCollision.h"
+#include "AsteroidsBlackHoleCollision.h"
 
 class GameManager : public Container
 {
@@ -38,6 +40,8 @@ private:
 	FighterAsteroidCollision fighterAsteroidCollision_;
 	BulletsAsteroidsCollision bulletsAsteroidsCollision_;
 	FighterBlackHoleCollision fighterBlackHoleCollision_;
+	BulletsBlackHolesCollision bulletsBlackHolesCollision_;
+	AsteroidsBlackHoleCollision asteroidsBlackHoleCollision_;
 protected:
 	
 

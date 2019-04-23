@@ -14,6 +14,8 @@ GameManager::GameManager(SDLGame * game): Container(game), running_(false), game
 	addC(&fighterAsteroidCollision_);
 	addC(&bulletsAsteroidsCollision_);
 	addC(&fighterBlackHoleCollision_);
+	addC(&bulletsBlackHolesCollision_);
+	addC(&asteroidsBlackHoleCollision_);
 }
 
 
@@ -48,6 +50,7 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 		globalSend(this, msg::Message(msg::GAME_OVER, msg::GameManager, msg::Broadcast));
 		break;
 	case msg::FIGHTER_ASTEROID_COLLISION:
+	case msg::FIGHTER_BLACKHOLE_COLLISION:
 		getGame()->getServiceLocator()->getAudios()->playChannel(Resources::Explosion, 0);
 		running_ = false;
 		lives_--;

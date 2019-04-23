@@ -49,10 +49,13 @@ void Bullets::receive(const void * senderObj, const msg::Message & msg)
 		setActive(false);
 		break;
 	case msg::BULLET_ASTEROID_COLLISION:
-	{  // si no pongo los corchetes da eror c2360
-		Bullet * x = static_cast<const msg::BulletAsteroidCollision&>(msg).bullet_; // bala colisionada
-		x->setActive(false);
-		break; }
+	{Bullet * x = static_cast<const msg::BulletAsteroidCollision&>(msg).bullet_; // bala colisionada
+	x->setActive(false);
+	break; }
+	case msg::BULLET_BLACKHOLE_COLLISION:
+	{Bullet * x = static_cast<const msg::BulletBlackHoleCollision&>(msg).bullet_; // bala colisionada
+	x->setActive(false);
+	break; }
 	case msg::FIGHTER_SHOOT:
 		Bullet * b = getUnusedObject();
 		if (b != nullptr) {
