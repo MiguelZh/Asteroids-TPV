@@ -9,6 +9,8 @@ public:
 	virtual ~BlackHoles();
 	virtual void receive(const void* senderObj, const msg::Message& msg);
 private:
+	int nBlackHoles = 0;
+	GameObject* fighter_ = nullptr;
 	// component for BlackHole
 	ImageGC blackHoleImage_;
 	RotatingPC rotating_;

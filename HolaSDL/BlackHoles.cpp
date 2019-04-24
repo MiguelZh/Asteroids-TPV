@@ -29,16 +29,25 @@ BlackHoles::~BlackHoles()
 void BlackHoles::receive(const void * senderObj, const msg::Message & msg)
 {
 	Container::receive(senderObj, msg);
+	double xCoord= 0, yCoord = 0;
 	switch (msg.type_)
 	{
 	case msg::GAME_START:
 		globalSend(this, msg::BlackHolesInfo(msg::BlackHoles, msg::Broadcast, &getAllObjects()));
+		nBlackHoles = 1;
 		break;
 	case msg::ROUND_START:
 		setActive(true);
-		for (int i = 0; i < 5; i++) {
+		nBlackHoles *= 2;
+		for (int i = 0; i < nBlackHoles; i++) {
 			BlackHole* b = getUnusedObject();
-			Vector2D pos = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth()),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0 ,getGame()->getWindowHeight()) };
+			do {
+				xCoord = (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth());
+			} while (xCoord < (getGame()->getWindowWidth()/2)+100 && xCoord > (getGame()->getWindowWidth() / 2) - 100);
+			do {
+				yCoord = (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowHeight());
+			} while (yCoord < (getGame()->getWindowHeight() / 2) + 100 && yCoord >(getGame()->getWindowHeight() / 2) - 100);
+			Vector2D pos = {xCoord, yCoord};
 			b->setPosition(pos);
 			b->setActive(true);
 		}
@@ -49,7 +58,16 @@ void BlackHoles::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::ASTEROID_BLACKHOLE_COLLISION:
 		Asteroid* x = static_cast<const msg::AsteroidBlackHoleCollision&>(msg).asteroid_; // asteroid destruido
-		Vector2D randomPos = { (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth()),(double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0 ,getGame()->getWindowHeight()) };
+		fighter_ = static_cast<const msg::FighterInfo&>(msg).fighter_;
+
+		do {
+			xCoord = (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth());
+		} while (xCoord < fighter_->getPosition().getX() + 100 && xCoord < fighter_->getPosition().getX() - 100);
+		do {
+			yCoord = (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowHeight());
+		} while (yCoord < fighter_->getPosition().getY() + 100 && yCoord < fighter_->getPosition().getY() - 100);
+
+		Vector2D randomPos = {xCoord, yCoord};
 		x->setPosition(randomPos);
 		break;
 	}
