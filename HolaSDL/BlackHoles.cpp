@@ -56,10 +56,11 @@ void BlackHoles::receive(const void * senderObj, const msg::Message & msg)
 		deactiveAllObjects();
 		setActive(false);
 		break;
+	case msg::FIGHTER_INFO:
+		fighter_ = static_cast<const msg::FighterInfo&>(msg).fighter_;
+		break;
 	case msg::ASTEROID_BLACKHOLE_COLLISION:
 		Asteroid* x = static_cast<const msg::AsteroidBlackHoleCollision&>(msg).asteroid_; // asteroid destruido
-		fighter_ = static_cast<const msg::FighterInfo&>(msg).fighter_;
-
 		do {
 			xCoord = (double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(0, getGame()->getWindowWidth());
 		} while (xCoord < fighter_->getPosition().getX() + 100 && xCoord < fighter_->getPosition().getX() - 100);
