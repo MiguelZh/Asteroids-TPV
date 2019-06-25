@@ -17,11 +17,12 @@ void Badge::receive(const void* senderObj, const msg::Message& msg)
 
 	switch (msg.type_)
 	{
+	case msg::GAME_START:
+		setActive(false);
 	case msg::ROUND_START:
 		setPosition({ (double)getGame()->getWindowWidth() / 2, 20 });
 		setWidth(50);
 		setHeight(50);
-		setActive(false);
 		break;
 	case msg::GAME_OVER:
 		setActive(false);
