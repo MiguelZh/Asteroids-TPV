@@ -228,6 +228,18 @@
     <ClInclude Include="AsteroidsBlackHoleCollision.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="GunUpgradeIC.h">
+      <Filter>Archivos de encabezado\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="Badge.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundOverSumUp.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="SumUpGC.h">
+      <Filter>Archivos de encabezado\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SDLGame.cpp">
@@ -412,6 +424,18 @@
     </ClCompile>
     <ClCompile Include="AsteroidsBlackHoleCollision.cpp">
       <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GunUpgradeIC.cpp">
+      <Filter>Archivos de código fuente\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Badge.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="RoundOverSumUp.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="SumUpGC.cpp">
+      <Filter>Archivos de código fuente\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

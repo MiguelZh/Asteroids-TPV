@@ -13,7 +13,8 @@
 #include "GameManager.h"
 #include "InputHandler.h"
 #include "BlackHoles.h"
-
+#include "Badge.h"
+#include "RoundOverSumUp.h"
 class AsteroidsGame: public SDLGame {
 
 public:
@@ -41,4 +42,6 @@ private:
 	Bullets bullets_;
 	DemoContainer demoContainer_;
 	BlackHoles blackHoles_;
+	Badge badge_;
+	RoundOverSumUp roundOverSumUp_;
 };

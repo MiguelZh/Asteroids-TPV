@@ -35,6 +35,9 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 	Container::receive(senderObj, msg);
 	switch (msg.type_)
 	{
+	case msg::FIGHTER_INFO:
+		fighter_ = static_cast<const msg::FighterInfo&>(msg).fighter_;
+		break;
 	case msg::GAME_START:
 		globalSend(this, msg::AsteroidsInfo(msg::Asteroids, msg::Broadcast, &getAllObjects()));
 		break;
@@ -67,7 +70,7 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 				break;
 			}
 			Vector2D c = Vector2D((double)getGame()->getWindowWidth() / 2, (double)getGame()->getWindowHeight() / 2);
-			Vector2D v = (c - a->getPosition()).normalize() * ((double)getGame()->getServiceLocator()->getRandomGenerator()->nextInt(1, 10) / 20.0);
+			Vector2D v = (fighter_->getPosition() - a->getPosition()).normalize()*0.5;
 			// al crear un asteroide, p es la posición y v es la velocidad del asteroide
 			Logger::getInstance()->log([p, v]() {
 				stringstream s;
@@ -137,6 +140,15 @@ void Asteroids::receive(const void * senderObj, const msg::Message & msg)
 			}
 		}
 		break;
+	}
+}
+
+void Asteroids::update(Uint32 time)
+{
+	GameObjectPool::update(time);
+	for (Asteroid* a : getAllObjects()) {
+		Vector2D v = (fighter_->getPosition() - a->getPosition()).normalize() * 0.5;
+		a->setVelocity(v);
 	}
 }
 

@@ -8,6 +8,8 @@ public:
 	Asteroids(SDLGame* game);
 	virtual ~Asteroids();
 	virtual void receive(const void* senderObj, const msg::Message& msg);
+	void update(Uint32 time);
+	GameObject* fighter_;
 private:
 	// component for Asteroid
 	ImageGC asteroidImage_;

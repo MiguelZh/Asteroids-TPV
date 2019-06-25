@@ -10,7 +10,9 @@ AsteroidsGame::AsteroidsGame() :
 	fighter_(this),
 	asteroids_(this),
 	bullets_(this),
-	blackHoles_(this)
+	blackHoles_(this),
+	badge_(this),
+	roundOverSumUp_(this)
 {
 	initGame();
 	Logger::getInstance()->initInstance("log.txt");
@@ -27,13 +29,17 @@ void AsteroidsGame::initGame() {
 	actors_.push_back(&fighter_);
 	actors_.push_back(&asteroids_);
 	actors_.push_back(&bullets_);
-	actors_.push_back(&blackHoles_);
+	actors_.push_back(&badge_);
+	actors_.push_back(&roundOverSumUp_);
+	//actors_.push_back(&blackHoles_);
 	//observadores
 	addObserver(&fighter_);
 	addObserver(&gameManager_);
 	addObserver(&asteroids_);
 	addObserver(&bullets_);
-	addObserver(&blackHoles_);
+	addObserver(&badge_);
+	addObserver(&roundOverSumUp_);
+	//addObserver(&blackHoles_);
 }
 
 void AsteroidsGame::closeGame() {

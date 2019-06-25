@@ -41,6 +41,8 @@ void GameManager::receive(const void * senderObj, const msg::Message & msg)
 		break;
 	case msg::ASTEROID_DESTROYED:
 		score_ +=  static_cast<const msg::AsteroidDestroyed&>(msg).points_;
+		if(score_ > 10)
+			globalSend(this, msg::UpgradeBulletInfo(msg::GameManager, msg::Broadcast, true));
 		break;
 	case msg::NO_MORE_ASTEROIDS:
 		running_ = false;

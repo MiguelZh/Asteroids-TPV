@@ -110,5 +110,11 @@ namespace msg {
 		}
 		const std::vector<BlackHole*>*  blackHoles_;
 	};
+	struct UpgradeBulletInfo : public msg::Message {
+		UpgradeBulletInfo(msg::ObjectId sender, msg::ObjectId destination, bool change) :
+			Message(msg::UPGRADE_BULLET, sender, destination), change_(change) {
+		}
+		const bool change_;
+	};
 
 };

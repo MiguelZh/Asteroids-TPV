@@ -13,12 +13,13 @@
 #include "ThrustIC.h"
 #include"ReduceSpeedPC.h"
 #include"GunIC.h"
-
+#include "GunUpgradeIC.h"
 class Fighter : public Container {
 public:
 	Fighter(SDLGame* game);
 	virtual ~Fighter();
 	virtual void receive(const void* senderObj, const msg::Message& msg);
+	void update(Uint32 time);
 private:
 	ImageGC fighterImage_;	
 	NaturalMovePC naturalMove_;
@@ -27,6 +28,7 @@ private:
 	ThrustIC thrust_;
 	ReduceSpeedPC reduceSpeed_;
 	GunIC normalGun_;
+	GunUpgradeIC upgradedGun_;
 	//BulletsShooter* bs_;
 };
 
